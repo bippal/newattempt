@@ -28,7 +28,7 @@ would-you-rather/
 │   └── screens/
 │       ├── Home.tsx                # Trending + My Questions
 │       ├── QuestionDetail.tsx      # Vote + Predict
-│       ├── CreatorDashboard.tsx    # Creator stats
+│       ├── Dashboard.tsx           # Creator stats
 │       ├── PurchaseScreen.tsx      # IAP bundles
 │       └── AdminPanel.tsx          # Moderation queue
 ├── RORK_JUNIOR_PROMPT.md           # Copy-paste to Rork
@@ -60,7 +60,7 @@ would-you-rather/
 
 **Files:**
 - `app/screens/PurchaseScreen.tsx` - IAP bundles
-- `app/screens/CreatorDashboard.tsx` - Stats dashboard
+- `app/screens/Dashboard.tsx` - Stats dashboard
 - `constants/pricing.ts` - IAP configuration
 - `utils/purchase.ts` - StoreKit/Google Billing
 

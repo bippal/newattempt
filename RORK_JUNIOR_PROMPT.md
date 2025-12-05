@@ -14,7 +14,7 @@ PROJECT STRUCTURE:
 SCREENS (6 total):
 1. Home.tsx - Main feed with trending questions
 2. QuestionDetail.tsx - Vote + predict slider
-3. CreatorDashboard.tsx - Creator stats + my questions
+3. Dashboard.tsx - Creator stats + my questions
 4. PurchaseScreen.tsx - IAP bundles
 5. AdminPanel.tsx - Admin moderation queue
 6. MyPredictions.tsx - User prediction history (basic scaffold)
@@ -23,7 +23,7 @@ NAVIGATION STRUCTURE:
 - Root Stack Navigator:
   - Home (default)
   - QuestionDetail
-  - CreatorDashboard
+  - Dashboard
   - PurchaseScreen
   - AdminPanel
   - MyPredictions
@@ -52,7 +52,7 @@ app/
   screens/
     Home.tsx
     QuestionDetail.tsx
-    CreatorDashboard.tsx
+    Dashboard.tsx
     PurchaseScreen.tsx
     AdminPanel.tsx
     MyPredictions.tsx
@@ -94,7 +94,7 @@ You now have the full production code in these 10 files from Claude:
 1. `types/index.ts` - All TypeScript interfaces
 2. `app/screens/Home.tsx` - Full home screen
 3. `app/screens/QuestionDetail.tsx` - Vote + prediction
-4. `app/screens/CreatorDashboard.tsx` - Creator stats
+4. `app/screens/Dashboard.tsx` - Creator stats
 5. `app/screens/PurchaseScreen.tsx` - IAP integration
 6. `app/screens/AdminPanel.tsx` - Moderation panel
 7. `constants/pricing.ts` - IAP configuration
