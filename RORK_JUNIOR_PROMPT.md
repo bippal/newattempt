@@ -7,26 +7,23 @@ Create a React Native Expo app called "Would You Rather" with the following stru
 
 PROJECT STRUCTURE:
 - Use TypeScript
-- Use Expo SDK 50+
-- Use React Navigation (Stack Navigator)
+- Use Expo SDK 51+
+- Use Expo Router (file-based routing)
 - Install dependencies: @react-native-community/slider
 
-SCREENS (6 total):
-1. Home.tsx - Main feed with trending questions
-2. QuestionDetail.tsx - Vote + predict slider
-3. Dashboard.tsx - Creator stats + my questions
-4. PurchaseScreen.tsx - IAP bundles
-5. AdminPanel.tsx - Admin moderation queue
-6. MyPredictions.tsx - User prediction history (basic scaffold)
+SCREENS (7 total using Expo Router):
+1. app/(tabs)/index.tsx - Home feed with trending questions
+2. app/(tabs)/dashboard.tsx - Creator stats + my questions
+3. app/(tabs)/profile.tsx - User profile
+4. app/question/[id].tsx - Question detail (dynamic route)
+5. app/purchase.tsx - IAP bundles
+6. app/admin.tsx - Admin moderation queue
+7. app/predictions.tsx - User prediction history
 
-NAVIGATION STRUCTURE:
-- Root Stack Navigator:
-  - Home (default)
-  - QuestionDetail
-  - Dashboard
-  - PurchaseScreen
-  - AdminPanel
-  - MyPredictions
+NAVIGATION STRUCTURE (Expo Router):
+- Bottom tabs: (tabs)/index, (tabs)/dashboard, (tabs)/profile
+- Stack screens: question/[id], purchase, admin, predictions
+- File-based routing (no manual navigator setup needed)
 
 CORE FEATURES:
 - Bottom tab navigation with Home, Dashboard, and Profile tabs
@@ -41,34 +38,35 @@ STYLING:
 - Clean, modern cards with shadows
 
 DEPENDENCIES TO INSTALL:
-- @react-navigation/native
-- @react-navigation/stack
+- expo-router
 - @react-native-community/slider
-- react-native-screens
 - react-native-safe-area-context
+- react-native-screens
 
-FILE STRUCTURE:
+FILE STRUCTURE (Expo Router):
 app/
-  screens/
-    Home.tsx
-    QuestionDetail.tsx
-    Dashboard.tsx
-    PurchaseScreen.tsx
-    AdminPanel.tsx
-    MyPredictions.tsx
-  navigation/
-    AppNavigator.tsx
+  (tabs)/
+    _layout.tsx          # Tab navigator layout
+    index.tsx            # Home tab
+    dashboard.tsx        # Dashboard tab
+    profile.tsx          # Profile tab
+  question/
+    [id].tsx             # Dynamic question detail route
+  _layout.tsx            # Root layout
+  admin.tsx              # Admin panel
+  purchase.tsx           # IAP bundles
+  predictions.tsx        # Prediction history
 types/
   index.ts
 constants/
   pricing.ts
   config.ts
-App.tsx
 
-Generate a working Expo app that I can preview immediately with:
+Generate a working Expo Router app that I can preview immediately with:
 - Mock data for questions
-- Working navigation between screens
-- Basic UI for all 6 screens
+- Working file-based routing
+- Bottom tab navigation
+- Basic UI for all screens
 - TypeScript types properly set up
 ```
 
@@ -89,18 +87,20 @@ Rork Junior will create:
 ## 📋 After Rork Generates Scaffold
 
 ### Step 1: Copy Files from Claude
-You now have the full production code in these 10 files from Claude:
+You now have the full production code in these 12 files from Claude:
 
 1. `types/index.ts` - All TypeScript interfaces
-2. `app/screens/Home.tsx` - Full home screen
-3. `app/screens/QuestionDetail.tsx` - Vote + prediction
-4. `app/screens/Dashboard.tsx` - Creator stats
-5. `app/screens/PurchaseScreen.tsx` - IAP integration
-6. `app/screens/AdminPanel.tsx` - Moderation panel
-7. `constants/pricing.ts` - IAP configuration
-8. `constants/config.ts` - App configuration
-9. `utils/moderation.ts` - Content moderation
-10. `utils/purchase.ts` - IAP utilities
+2. `app/(tabs)/index.tsx` - Home screen (Expo Router)
+3. `app/(tabs)/dashboard.tsx` - Creator dashboard (Expo Router)
+4. `app/(tabs)/profile.tsx` - User profile (Expo Router)
+5. `app/question/[id].tsx` - Question detail (dynamic route)
+6. `app/purchase.tsx` - IAP integration (Expo Router)
+7. `app/admin.tsx` - Admin moderation panel (Expo Router)
+8. `app/predictions.tsx` - Prediction history (Expo Router)
+9. `constants/pricing.ts` - IAP configuration
+10. `constants/config.ts` - App configuration
+11. `utils/moderation.ts` - Content moderation
+12. `utils/purchase.ts` - IAP utilities
 
 ### Step 2: Paste Files into Rork Junior
 1. Open each screen file in Rork Junior
