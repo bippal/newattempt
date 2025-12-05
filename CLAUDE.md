@@ -25,12 +25,15 @@ would-you-rather/
 │   ├── moderation.ts               # Content filtering
 │   └── purchase.ts                 # IAP integration
 ├── app/
-│   └── screens/
-│       ├── Home.tsx                # Trending + My Questions
-│       ├── QuestionDetail.tsx      # Vote + Predict
-│       ├── Dashboard.tsx           # Creator stats
-│       ├── PurchaseScreen.tsx      # IAP bundles
-│       └── AdminPanel.tsx          # Moderation queue
+│   ├── (tabs)/                     # Bottom tab navigation
+│   │   ├── index.tsx               # Home - Trending questions
+│   │   ├── dashboard.tsx           # Creator stats
+│   │   └── profile.tsx             # User profile
+│   ├── question/
+│   │   └── [id].tsx                # Question detail (dynamic route)
+│   ├── admin.tsx                   # Admin moderation panel
+│   ├── purchase.tsx                # IAP bundles
+│   └── predictions.tsx             # Prediction history
 ├── RORK_JUNIOR_PROMPT.md           # Copy-paste to Rork
 └── CLAUDE.md                       # This file
 ```
@@ -47,8 +50,8 @@ would-you-rather/
 - Points awarded for accurate predictions
 
 **Files:**
-- `app/screens/Home.tsx` - Question feed
-- `app/screens/QuestionDetail.tsx` - Vote + prediction UI
+- `app/(tabs)/index.tsx` - Question feed (Expo Router)
+- `app/question/[id].tsx` - Vote + prediction UI (dynamic route)
 - `types/index.ts` - Question, Vote interfaces
 
 ### 2. **Paid Creator System**
@@ -59,8 +62,8 @@ would-you-rather/
 - View your own questions/answers anytime
 
 **Files:**
-- `app/screens/PurchaseScreen.tsx` - IAP bundles
-- `app/screens/Dashboard.tsx` - Stats dashboard
+- `app/purchase.tsx` - IAP bundles (Expo Router)
+- `app/(tabs)/dashboard.tsx` - Stats dashboard (tab route)
 - `constants/pricing.ts` - IAP configuration
 - `utils/purchase.ts` - StoreKit/Google Billing
 
@@ -73,7 +76,7 @@ would-you-rather/
 - View moderation stats
 
 **Files:**
-- `app/screens/AdminPanel.tsx` - Admin UI
+- `app/admin.tsx` - Admin UI (Expo Router)
 - `utils/moderation.ts` - Profanity filter + validation
 - `constants/config.ts` - Banned words list
 
@@ -402,10 +405,10 @@ export const IAP_PACKS: IAPPack[] = [
 - All TODO items marked in code
 
 **File locations:**
-- Types: `types/index.ts:1-70`
-- IAP Config: `constants/pricing.ts:6-50`
+- Types: `types/index.ts:1-100`
+- IAP Config: `constants/pricing.ts:6-80`
 - Moderation: `utils/moderation.ts:17-300`
-- Screens: `app/screens/*.tsx`
+- Screens: `app/(tabs)/*.tsx`, `app/*.tsx`, `app/question/*.tsx`
 
 ---
 
